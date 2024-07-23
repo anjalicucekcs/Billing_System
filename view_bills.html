@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>View Bills</h1>
+    <ul>
+        {% for bill in bills %}
+            <li>
+                Bill ID: {{ bill.id }} - Items:
+                <ul>
+                    {% for item in bill.items %}
+                        <li>{{ item.name }} - ${{ item.price }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
